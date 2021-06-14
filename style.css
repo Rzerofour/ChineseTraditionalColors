@@ -1,0 +1,88 @@
+/*主体样式START*/
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#container {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    position: relative;
+}
+/*主体样式END*/
+
+/*导航栏START*/
+#menu {
+    height: 58px;
+    box-shadow: 2px 5px 5px gray;
+    background-color: rgba(177,59,46,1.00); /*颜色随用户选择更改*/
+    position: relative;
+    width: 100%;
+}
+
+    #menu a {
+        cursor: pointer;
+    }
+
+    #menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0 0 0 1em;
+        overflow: hidden;
+    }
+
+    #menu li {
+        float: left;
+    }
+
+        #menu li a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 42px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 20px;
+            border-radius: 24px;
+        }
+
+            #menu li a:hover {
+                background-color: rgba(149,48,46,1.00); /*颜色随用户选择更改（深色）*/
+                transition-duration: 0.5s;
+            }
+
+    #menu img {
+        display: block;
+        padding: 3px;
+        float: left;
+        background-color: rgba(177,59,46,1.00); /*颜色随用户选择更改*/
+    }
+/*导航栏END*/
+
+/*内容START*/
+#main {
+    width: 960px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+/*内容END*/
+
+/*脚注START*/
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    clear: both;
+    background-color: rgba(217, 217, 217,1.00);
+}
+
+    #footer a, p {
+        float: left;
+        text-align: center;
+        text-decoration: none;
+    }
+/*脚注END*/
