@@ -5,16 +5,40 @@
     <meta charset="utf-8" />
     <title>中国传统色</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="shortcut icon" href="/imgsrc+/favicon.ico" />
-    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <link rel="shortcut icon" href="https://raw.githubusercontent.com/Rzerofour/ChineseTraditionalColors/main/imgsrc%2B/favicon.ico" />
+    <script type="text/javascript" src="/jssrc/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/jssrc/pageSwitch-3.0.0.js"></script>
+    <script>
+        $.fn.extend({
+            pageSwitch: function (cfg) {
+                this[0].ps = new pageSwitch(this[0], cfg);
+                return this;
+            },
+            ps: function () {
+                return this[0].ps;
+            }
+        });
+        $("#main").pageSwitch({
+            duration: 1000,
+            transition: 'slide',
+            start: 0,
+            direction: 1,
+            loop: false,
+            ease: 'ease',
+            transition: ts,
+            freeze: false,
+            mouse: true,
+            mousewheel: true,
+            arrowkey: true
+        });
+    </script>
 </head>
 <body>
     <div id="container">
 
         <!-- 导航栏 -->
         <nav id="menu">
-            <a href="mainpage.html"><img src="imgsrc+/logowhite.png" alt="中国传统色" title="中国传统色" /></a>
+            <a href="mainpage.html"><img src="https://github.com/Rzerofour/ChineseTraditionalColors/blob/main/imgsrc+/logowhite.png?raw=true" alt="中国传统色" title="中国传统色" /></a>
             <ul>
                 <li><a href="#">红</a></li>
                 <li><a href="#">橙</a></li>
@@ -24,7 +48,8 @@
 
         <!-- 内容 -->
         <section id="main">
-            <img src="/imgsrc+/首页+.png" />
+            <div class="item"><img src="https://github.com/Rzerofour/ChineseTraditionalColors/blob/main/imgsrc+/%E9%A6%96%E9%A1%B5+.png?raw=true" width="643" height="546" alt="《乾隆帝月令七十二候诗》彩色墨" title="《乾隆帝月令七十二候诗》彩色墨" /></div>
+            <div class="item"><img src="https://github.com/Rzerofour/ChineseTraditionalColors/blob/main/imgsrc+/%E7%BA%A2+.png?raw=true" width="643" height="546" alt="郎窑红釉琵琶尊" title="郎窑红釉琵琶尊" /></div>
         </section>
 
         <!-- 脚注 -->

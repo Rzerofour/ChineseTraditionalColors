@@ -1,4 +1,4 @@
-/*主体样式START*/
+/*主体START*/
 html, body {
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ html, body {
     height: 100%;
     position: relative;
 }
-/*主体样式END*/
+/*主体END*/
 
 /*导航栏START*/
 #menu {
@@ -67,6 +67,9 @@ html, body {
     width: 960px;
     margin: 0 auto;
     padding-bottom: 50px;
+}
+#item{
+    
 }
 /*内容END*/
 

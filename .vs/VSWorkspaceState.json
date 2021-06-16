@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\imgsrc"
+    "\\imgsrc",
+    "\\imgsrc+"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\imgsrc+",
   "PreviewInSolutionExplorer": false
 }
