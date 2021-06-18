@@ -9,7 +9,7 @@
     <script type="text/javascript" src="/jssrc/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="/jssrc/pageSwitch-3.0.0.js"></script>
     <script>
-        /*pageSwitch调用START*/
+        /*pageSwitch设置START*/
         $(document).ready(function () {
             $.fn.extend({
                 pageSwitch: function (cfg) {
@@ -21,7 +21,7 @@
                 }
             });
             $("#wrap").pageSwitch({
-                duration: 1000,
+                duration: 500,
                 transition: 'scroll',
                 start: 0,
                 direction: 1,
@@ -32,11 +32,28 @@
                 mousewheel: true,
                 arrowkey: true
             });
-            $("#wrap")
-                .ps()
-                .next();
         })
-        /*pageSwitch调用END*/
+     /*   i = 0;
+        for (; i < navs.length; i++) {
+            !(function (i) {
+                navs[i].onclick = function () {
+                    a.slide(i);
+                };
+            })(i);
+        }    导航栏*/
+        /*pageSwitch设置END*/
+        /*导航栏设置START*/
+        $(document).ready(function () {
+            $("a.nav").click(function () {
+                $("a.nav").filter(".active").css("background-color", "");
+                $("a.nav").filter(".active").attr("class", "nav");
+                $(this).attr("class", "nav active");
+                $(this).css("background-color", "rgba(149,48,46,1.00)");
+                var n = $(this).attr("id");
+                $("#wrap").ps().slide(n);
+            })
+        })
+        /*导航栏设置EN*/
     </script>
 </head>
 <body>
@@ -44,19 +61,29 @@
 
         <!-- 导航栏 -->
         <nav id="menu">
-            <a href="mainpage.html"><img src="https://github.com/Rzerofour/ChineseTraditionalColors/blob/main/imgsrc+/logowhite.png?raw=true" alt="中国传统色" title="中国传统色" /></a>
+            <a href="index.html"><img src="https://github.com/Rzerofour/ChineseTraditionalColors/blob/main/imgsrc+/logowhite.png?raw=true/" alt="中国传统色" title="中国传统色" /></a>
             <ul>
-                <li><a href="#">红</a></li>
-                <li><a href="#">橙</a></li>
-                <li><a href="#">黄</a></li>
+                <li><a id="1" class="nav">红</a></li>
+                <li><a id="2" class="nav">橙</a></li>
+                <li><a id="3" class="nav">黄</a></li>
+                <li><a id="4" class="nav">绿</a></li>
+                <li><a id="5" class="nav">蓝</a></li>
+                <li><a id="6" class="nav">靛</a></li>
+                <li><a id="7" class="nav">紫</a></li>
             </ul>
         </nav>
 
         <!-- 内容 -->
         <section id="main">
             <div id="wrap">
-                <div class="item"><img src="https://github.com/Rzerofour/ChineseTraditionalColors/blob/main/imgsrc+/%E9%A6%96%E9%A1%B5+.png?raw=true" width="643" height="546" alt="《乾隆帝月令七十二候诗》彩色墨" title="《乾隆帝月令七十二候诗》彩色墨" /></div>
-                <div class="item"><img src="https://github.com/Rzerofour/ChineseTraditionalColors/blob/main/imgsrc+/%E7%BA%A2+.png?raw=true" width="643" height="546" alt="郎窑红釉琵琶尊" title="郎窑红釉琵琶尊" /></div>
+                <div class="item"><img class="img" src="https://github.com/Rzerofour/ChineseTraditionalColors/blob/main/imgsrc+/%E9%A6%96%E9%A1%B5+.png?raw=true/" alt="《乾隆帝月令七十二候诗》彩色墨" title="《乾隆帝月令七十二候诗》彩色墨" /></div>
+                <div class="item"><img class="img" src="https://github.com/Rzerofour/ChineseTraditionalColors/blob/main/imgsrc+/%E7%BA%A2+.png?raw=true/" alt="雍正款仿钧窑变釉弦纹扁肚瓶" title="雍正款仿钧窑变釉弦纹扁肚瓶" /></div>
+                <div class="item"><img class="img" src="https://github.com/Rzerofour/ChineseTraditionalColors/blob/main/imgsrc+/%E6%A9%99+.png?raw=true/" alt="金胎珊瑚桃式盒" title="金胎珊瑚桃式盒" /></div>
+                <div class="item"><img class="img" src="https://github.com/Rzerofour/ChineseTraditionalColors/blob/main/imgsrc+/%E9%BB%84+.png?raw=true/" alt="淡黄釉瓶" title="淡黄釉瓶" /></div>
+                <div class="item"><img class="img" src="https://github.com/Rzerofour/ChineseTraditionalColors/blob/main/imgsrc+/%E7%BB%BF+.png?raw=true/" alt="素三彩海蟾纹三足洗" title="素三彩海蟾纹三足洗" /></div>
+                <div class="item"><img class="img" src="https://github.com/Rzerofour/ChineseTraditionalColors/blob/main/imgsrc+/%E8%93%9D+.png?raw=true/" alt="天蓝釉双龙耳瓶" title="天蓝釉双龙耳瓶" /></div>
+                <div class="item"><img class="img" src="https://github.com/Rzerofour/ChineseTraditionalColors/blob/main/imgsrc+/%E9%9D%9B+.png?raw=true/" alt="雍正款蓝色透明玻璃八棱瓶" title="雍正款蓝色透明玻璃八棱瓶" /></div>
+                <div class="item"><img class="img" src="https://github.com/Rzerofour/ChineseTraditionalColors/blob/main/imgsrc+/%E7%B4%AB+.png?raw=true/" alt="雍正款仿钧窑变釉海棠式花盆" title="雍正款仿钧窑变釉海棠式花盆" /></div>
             </div>
         </section>
 

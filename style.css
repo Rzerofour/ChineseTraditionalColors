@@ -68,8 +68,23 @@ html, body {
     margin: 0 auto;
     padding-bottom: 50px;
 }
-#item{
-    
+.item {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 1900px;
+    height: 860px;
+    display:table-cell;
+    text-align:center;
+    vertical-align:middle;
+}
+.img{
+    max-width:80%;
+    max-height:80%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
 }
 /*ÄÚÈÝEND*/
 
