@@ -1,108 +1,109 @@
-/*Ö÷ÌåSTART*/
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+/*ä¸»ä½“START*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 #container {
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    position: relative;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  position: relative;
 }
-/*Ö÷ÌåEND*/
+/*ä¸»ä½“END*/
 
-/*µ¼º½À¸START*/
+/*å¯¼èˆªæ START*/
 #menu {
-    height: 58px;
-    box-shadow: 2px 5px 5px gray;
-    background-color: rgba(177,59,46,1.00); /*ÑÕÉ«ËæÓÃ»§Ñ¡Ôñ¸ü¸Ä*/
-    position: relative;
-    width: 100%;
+  height: 58px;
+  box-shadow: 2px 5px 5px gray;
+  background-color: rgba(177, 59, 46, 1); /*é¢œè‰²éšç”¨æˆ·é€‰æ‹©æ›´æ”¹*/
+  position: relative;
+  width: 100%;
 }
 
-    #menu a {
-        cursor: pointer;
-    }
+#menu a {
+  cursor: pointer;
+}
 
-    #menu ul {
-        list-style: none;
-        margin: 0;
-        padding: 0 0 0 1em;
-        overflow: hidden;
-    }
+#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 1em;
+  overflow: hidden;
+}
 
-    #menu li {
-        float: left;
-    }
+#menu li {
+  float: left;
+}
 
-        #menu li a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 42px;
-            text-decoration: none;
-            cursor: pointer;
-            font-size: 20px;
-            border-radius: 24px;
-        }
+#menu li a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 42px;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 24px;
+}
 
-            #menu li a:hover {
-                background-color: rgba(149,48,46,1.00); /*ÑÕÉ«ËæÓÃ»§Ñ¡Ôñ¸ü¸Ä£¨ÉîÉ«£©*/
-                transition-duration: 0.5s;
-            }
+#menu li a:hover {
+  background-color: rgba(149, 48, 46, 1); /*é¢œè‰²éšç”¨æˆ·é€‰æ‹©æ›´æ”¹ï¼ˆæ·±è‰²ï¼‰*/
+  transition-duration: 0.5s;
+}
 
-    #menu img {
-        display: block;
-        padding: 3px;
-        float: left;
-        background-color: rgba(177,59,46,1.00); /*ÑÕÉ«ËæÓÃ»§Ñ¡Ôñ¸ü¸Ä*/
-    }
-/*µ¼º½À¸END*/
+#menu img {
+  display: block;
+  padding: 3px;
+  float: left;
+  background-color: rgba(177, 59, 46, 1); /*é¢œè‰²éšç”¨æˆ·é€‰æ‹©æ›´æ”¹*/
+}
+/*å¯¼èˆªæ END*/
 
-/*ÄÚÈÝSTART*/
+/*å†…å®¹START*/
 #main {
-    width: 960px;
-    margin: 0 auto;
-    padding-bottom: 50px;
+  width: 960px;
+  margin: 0 auto;
+  padding-bottom: 50px;
 }
 .item {
-    position: relative;
-    top: 0px;
-    left: 0px;
-    width: 1900px;
-    height: 860px;
-    display:table-cell;
-    text-align:center;
-    vertical-align:middle;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  width: 1900px;
+  height: 860px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
 }
-.img{
-    max-width:80%;
-    max-height:80%;
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
+.img {
+  max-width: 80%;
+  max-height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-/*ÄÚÈÝEND*/
+/*å†…å®¹END*/
 
-/*½Å×¢START*/
+/*è„šæ³¨START*/
 #footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 50px;
-    clear: both;
-    background-color: rgba(217, 217, 217,1.00);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  clear: both;
+  background-color: rgba(217, 217, 217, 1);
 }
 
-    #footer p {
-        text-align: center;
-    }
+#footer p {
+  text-align: center;
+}
 
-    #footer a {
-        text-decoration: none;
-    }
-/*½Å×¢END*/
+#footer a {
+  text-decoration: none;
+}
+/*è„šæ³¨END*/
