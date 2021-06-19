@@ -1,66 +1,79 @@
 /*主体START*/
+/*TODO:引入字体*/
 html,
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 
 #container {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
   position: relative;
+  height: 100%;
+  height: auto;
+  min-height: 100%;
 }
+
 /*主体END*/
 
 /*导航栏START*/
 #menu {
-  height: 58px;
-  box-shadow: 2px 5px 5px gray;
-  background-color: rgba(177, 59, 46, 1); /*颜色随用户选择更改*/
-  position: relative;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  overflow: hidden;
   width: 100%;
+  height: 58px;
+  background-color: rgba(177, 59, 46, 1);
+  box-shadow: 0 0 10px gray;
 }
 
-#menu a {
-  cursor: pointer;
-}
-
-#menu ul {
-  list-style: none;
+#navs ul {
+  overflow: hidden;
   margin: 0;
   padding: 0 0 0 1em;
-  overflow: hidden;
+  list-style: none;
 }
 
-#menu li {
-  float: left;
-}
-
-#menu li a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 42px;
-  text-decoration: none;
-  cursor: pointer;
+#navs a {
   font-size: 20px;
+  display: block;
+  float: left;
+  padding: 14px 42px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: white;
   border-radius: 24px;
 }
 
-#menu li a:hover {
-  background-color: rgba(149, 48, 46, 1); /*颜色随用户选择更改（深色）*/
-  transition-duration: 0.5s;
+#navs a:hover {
+  transition-duration: .5s;
+  background-color: rgba(128, 128, 128, .5);
 }
 
-#menu img {
-  display: block;
-  padding: 3px;
-  float: left;
-  background-color: rgba(177, 59, 46, 1); /*颜色随用户选择更改*/
+#navs a.active {
+  background-color: rgba(128, 128, 128, .5);
 }
+
+#logo {
+  float: left;
+  overflow: hidden;
+  width: 250px;
+  height: 52px;
+  margin: 3px 40px 3px 0;
+}
+
+#logo a {
+  display: block;
+  width: 250px;
+  height: 52px;
+  border: none;
+  background: url('./imgsrc_/logowhite.svg') no-repeat left center;
+  background-size: auto 100%;
+}
+
+
 /*导航栏END*/
 
 /*内容START*/
@@ -69,33 +82,37 @@ body {
   margin: 0 auto;
   padding-bottom: 50px;
 }
+
 .item {
   position: relative;
-  top: 0px;
-  left: 0px;
-  width: 1900px;
-  height: 860px;
+  top: 0;
+  left: 0;
   display: table-cell;
+  width: 1900px;
+  height: 820px;
   text-align: center;
   vertical-align: middle;
 }
+
 .img {
-  max-width: 80%;
-  max-height: 80%;
   position: absolute;
   top: 50%;
   left: 50%;
+  max-width: 80%;
+  max-height: 80%;
   transform: translate(-50%, -50%);
 }
+
 /*内容END*/
 
 /*脚注START*/
 #footer {
   position: absolute;
+  z-index: 1;
   bottom: 0;
-  width: 100%;
-  height: 50px;
   clear: both;
+  width: 100%;
+  height: 90px;
   background-color: rgba(217, 217, 217, 1);
 }
 
@@ -106,4 +123,5 @@ body {
 #footer a {
   text-decoration: none;
 }
+
 /*脚注END*/

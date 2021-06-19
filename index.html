@@ -10,8 +10,8 @@
     <script type="text/javascript" src="./jssrc/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="./jssrc/pageSwitch-3.0.0.js"></script>
     <script>
-        /*pageSwitch设置START*/
         $(document).ready(function () {
+            /*pageSwitch设置START*/
             $.fn.extend({
                 pageSwitch: function (cfg) {
                     this[0].ps = new pageSwitch(this[0], cfg);
@@ -20,9 +20,9 @@
                 ps: function () {
                     return this[0].ps;
                 }
-            });
+            })
             $("#wrap").pageSwitch({
-                duration: 500,
+                duration: 400,
                 transition: 'scroll',
                 start: 0,
                 direction: 1,
@@ -32,29 +32,34 @@
                 mouse: true,
                 mousewheel: true,
                 arrowkey: true
-            });
-        })
-        /*   i = 0;
-           for (; i < navs.length; i++) {
-               !(function (i) {
-                   navs[i].onclick = function () {
-                       a.slide(i);
-                   };
-               })(i);
-           }    导航栏*/
-        /*pageSwitch设置END*/
-        /*导航栏设置START*/
-        $(document).ready(function () {
-            $("a.nav").click(function () {
-                $("a.nav").filter(".active").css("background-color", "");
-                $("a.nav").filter(".active").attr("class", "nav");
-                $(this).attr("class", "nav active");
-                $(this).css("background-color", "rgba(149,48,46,1.00)");
-                var n = $(this).attr("id");
-                $("#wrap").ps().slide(n);
             })
+            /*pageSwitch设置END*/
+
+            /*导航栏设置START*/
+            /*TODO:导航栏颜色渐变*/
+            var navs = $("#navs a").get();
+            var i = 0;
+            var colorsChangeMenu = new Array("rgba(177, 59, 46, 1)", "rgba(177, 59, 46, 1)",
+                "rgba(241, 143, 96, 1)", "rgba(255, 238, 111, 1)", "rgba(93,131,81,1)",
+                "rgba(188,212,231,1)", "rgba(111,148,205,1)", "rgba(138,24,116,1)")
+            $("#wrap").ps().on('before', function (m, n) {
+                $(navs[m - 1]).attr("class", "");
+                $(navs[n - 1]).attr("class", "active");
+            })
+
+            for (; i < navs.length + 1; i++) {
+                !(function (i) {
+                    $("#wrap").ps().on('after', function (i) {
+                        $("#menu").css("background-color", colorsChangeMenu[i])
+                    })
+                    $(navs[i - 1]).click(function () {
+                        $("#wrap").ps().slide(i);
+                        $("#menu").css("background-color", colorsChangeMenu[i])
+                    });
+                })(i);
+            }
+            /*导航栏设置END*/
         })
-        /*导航栏设置END*/
     </script>
 </head>
 
@@ -63,19 +68,22 @@
 
         <!-- 导航栏 -->
         <nav id="menu">
-            <a href="index.html"><img src="./imgsrc_/logowhite.png" alt="中国传统色" title="中国传统色" /></a>
-            <ul>
-                <li><a id="1" class="nav">红</a></li>
-                <li><a id="2" class="nav">橙</a></li>
-                <li><a id="3" class="nav">黄</a></li>
-                <li><a id="4" class="nav">绿</a></li>
-                <li><a id="5" class="nav">蓝</a></li>
-                <li><a id="6" class="nav">靛</a></li>
-                <li><a id="7" class="nav">紫</a></li>
-            </ul>
+            <div id="logo"><a href="index.html" title="中国传统色"></a></div>
+            <div id="navs">
+                <ul>
+                    <li><a>红</a></li>
+                    <li><a>橙</a></li>
+                    <li><a>黄</a></li>
+                    <li><a>绿</a></li>
+                    <li><a>蓝</a></li>
+                    <li><a>靛</a></li>
+                    <li><a>紫</a></li>
+                </ul>
+            </div>
         </nav>
 
         <!-- 内容 -->
+        <!-- TODO:！！！实现颜色介绍 -->
         <section id="main">
             <div id="wrap">
                 <div class="item"><img class="img" src="./imgsrc_/首页_.png" alt="《乾隆帝月令七十二候诗》彩色墨"
