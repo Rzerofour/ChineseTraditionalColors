@@ -8,7 +8,11 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="shortcut icon" href="./imgsrc+/favicon.ico" />
     <script type="text/javascript" src="./jssrc/jquery-3.6.0.min.js"></script>
+    <!-- Powered by https://github.com/jquery/jquery -->
     <script type="text/javascript" src="./jssrc/pageSwitch-3.0.0.js"></script>
+    <!-- Powered by https://github.com/qiqiboy/pageSwitch -->
+    <script type="text/javascript" src="./jssrc/jquery.color.plus-names-2.2.0.min.js"></script>
+    <!-- Powered by https://github.com/jquery/jquery-color -->
     <script>
         $(document).ready(function () {
             /*pageSwitch设置START*/
@@ -36,7 +40,6 @@
             /*pageSwitch设置END*/
 
             /*导航栏设置START*/
-            /*TODO:导航栏颜色渐变*/
             var navs = $("#navs a").get();
             var i = 0;
             var colorsChangeMenu = new Array("rgba(177, 59, 46, 1)", "rgba(177, 59, 46, 1)",
@@ -46,15 +49,18 @@
                 $(navs[m - 1]).attr("class", "");
                 $(navs[n - 1]).attr("class", "active");
             })
-
             for (; i < navs.length + 1; i++) {
                 !(function (i) {
                     $("#wrap").ps().on('after', function (i) {
-                        $("#menu").css("background-color", colorsChangeMenu[i])
+                        $("#menu").animate({
+                            backgroundColor: colorsChangeMenu[i]
+                        }, 100);
                     })
                     $(navs[i - 1]).click(function () {
                         $("#wrap").ps().slide(i);
-                        $("#menu").css("background-color", colorsChangeMenu[i])
+                        $("#menu").animate({
+                            backgroundColor: colorsChangeMenu[i]
+                        }, 100);
                     });
                 })(i);
             }

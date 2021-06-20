@@ -1,5 +1,12 @@
+/*TODO:字体文件支持（font-spider），等待网页制作完成*/
+/* @font-face {
+  font-family: 'NewShanHaiShu';
+  font-weight: normal;
+  font-style: normal;
+  src: url('./fonts/NewShanHaiShu.ttf') format('truetype');
+} */
+
 /*主体START*/
-/*TODO:引入字体*/
 html,
 body {
   height: 100%;
@@ -36,6 +43,7 @@ body {
 }
 
 #navs a {
+  font-family: "NewShanHaiShu";
   font-size: 20px;
   display: block;
   float: left;
