@@ -3,10 +3,11 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+    <!-- TODO:加点keywords和description -->
     <meta charset="utf-8" />
     <title>中国传统色</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="shortcut icon" href="./imgsrc+/favicon.ico" />
+    <link rel="shortcut icon" href="./imgsrc_/favicon.ico" />
     <script type="text/javascript" src="./jssrc/jquery-3.6.0.min.js"></script>
     <!-- Powered by https://github.com/jquery/jquery -->
     <script type="text/javascript" src="./jssrc/pageSwitch-3.0.0.js"></script>
@@ -14,6 +15,7 @@
     <script type="text/javascript" src="./jssrc/jquery.color.plus-names-2.2.0.min.js"></script>
     <!-- Powered by https://github.com/jquery/jquery-color -->
     <script>
+        // TODO:更多动画
         $(document).ready(function () {
             /*pageSwitch设置START*/
             $.fn.extend({
@@ -40,6 +42,7 @@
             /*pageSwitch设置END*/
 
             /*导航栏设置START*/
+            // TODO:导航栏缩进
             var navs = $("#navs a").get();
             var i = 0;
             var colorsChangeMenu = new Array("rgba(177, 59, 46, 1)", "rgba(177, 59, 46, 1)",
@@ -74,7 +77,6 @@
 
         <!-- 导航栏 -->
         <nav id="menu">
-            <div id="logo"><a href="index.html" title="中国传统色"></a></div>
             <div id="navs">
                 <ul>
                     <li><a>红</a></li>
@@ -90,6 +92,8 @@
 
         <!-- 内容 -->
         <!-- TODO:！！！实现颜色介绍 -->
+        <!-- TODO:logo重写与文物介绍 -->
+        <!-- TODO:BGM设置 -->
         <section id="main">
             <div id="wrap">
                 <div class="item"><img class="img" src="./imgsrc_/首页_.png" alt="《乾隆帝月令七十二候诗》彩色墨"
@@ -108,6 +112,7 @@
         </section>
 
         <!-- 脚注 -->
+        <!-- XXX:参考文献及免责声明 -->
         <footer id="footer">
             <p>
                 <a href="https://github.com/Rzerofour/ChineseTraditionalColors">项目主页</a>|
