@@ -1,126 +1,114 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <!-- TODO:加点keywords和description -->
     <meta charset="utf-8" />
     <title>中国传统色</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="shortcut icon" href="./imgsrc_/favicon.ico" />
-    <script type="text/javascript" src="./jssrc/jquery-3.6.0.min.js"></script>
+    <meta name="keywords" content="中国传统色，中国色，传统颜色，传统色彩，色彩文化" />
+    <meta name="description" content="寻找文物中的中国色彩" />
+    <link rel="shortcut icon" href="./img_/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/fullpage.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/font-awesome.min.css">
+    <!-- Powered by http://www.fontawesome.com.cn/ -->
+    <script type="text/javascript" src="./js/jquery-3.6.0.min.js"></script>
     <!-- Powered by https://github.com/jquery/jquery -->
-    <script type="text/javascript" src="./jssrc/pageSwitch-3.0.0.js"></script>
-    <!-- Powered by https://github.com/qiqiboy/pageSwitch -->
-    <script type="text/javascript" src="./jssrc/jquery.color.plus-names-2.2.0.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.color.plus-names-2.2.0.min.js"></script>
     <!-- Powered by https://github.com/jquery/jquery-color -->
-    <script>
+    <script type="text/javascript" src="./js/fullpage.min.js"></script>
+    <!-- Powered by https://github.com/alvarotrigo/fullPage.js -->
+    <script type="text/javascript">
         // TODO:更多动画
         $(document).ready(function () {
-            /*pageSwitch设置START*/
-            $.fn.extend({
-                pageSwitch: function (cfg) {
-                    this[0].ps = new pageSwitch(this[0], cfg);
-                    return this;
-                },
-                ps: function () {
-                    return this[0].ps;
+            $('#fullpage').fullpage({
+                // 锚点设置
+                anchors: ['homePage', '1Page', '2Page', '3Page', '4Page', '5Page', '6Page', '7Page',
+                    '8Page', '9Page'
+                ],
+                menu: "#menu",
+                onLeave: function (origin, destination, direction) {
+                    var leavingSection = this;
+                    var colorsChangeMenu = new Array("rgba(177, 59, 46, 1)", "rgba(177, 59, 46, 1)",
+                        "rgba(241, 143, 96, 1)", "rgba(255, 238, 111, 1)", "rgba(93,131,81,1)",
+                        "rgba(188,212,231,1)", "rgba(111,148,205,1)", "rgba(138,24,116,1)");
+                    // 导航栏颜色渐变
+                    $("#menu").animate({
+                        backgroundColor: colorsChangeMenu[destination.index]
+                    }, 100)
+                    // 清除项目背景颜色
+                    $("#menu a[href='#" + origin.index + "Page']").css("background-color", "")
+                    //清除画笔图标
+                    $(".fa-paint-brush").remove()
+                    //增加画笔图标
+                    $("<i class='fa fa-paint-brush'></i>").prependTo("#menu a[href='#" + destination
+                        .index + "Page']")
+                    //增加项目背景颜色
+                    $("#menu a[href='#" + destination.index + "Page']").css("background-color",
+                        "rgba(128, 128, 128, .5)")
                 }
             })
-            $("#wrap").pageSwitch({
-                duration: 400,
-                transition: 'scroll',
-                start: 0,
-                direction: 1,
-                loop: false,
-                ease: 'ease',
-                freeze: false,
-                mouse: true,
-                mousewheel: true,
-                arrowkey: true
-            })
-            /*pageSwitch设置END*/
-
-            /*导航栏设置START*/
-            // TODO:导航栏缩进
-            var navs = $("#navs a").get();
-            var i = 0;
-            var colorsChangeMenu = new Array("rgba(177, 59, 46, 1)", "rgba(177, 59, 46, 1)",
-                "rgba(241, 143, 96, 1)", "rgba(255, 238, 111, 1)", "rgba(93,131,81,1)",
-                "rgba(188,212,231,1)", "rgba(111,148,205,1)", "rgba(138,24,116,1)")
-            $("#wrap").ps().on('before', function (m, n) {
-                $(navs[m - 1]).attr("class", "");
-                $(navs[n - 1]).attr("class", "active");
-            })
-            for (; i < navs.length + 1; i++) {
-                !(function (i) {
-                    $("#wrap").ps().on('after', function (i) {
-                        $("#menu").animate({
-                            backgroundColor: colorsChangeMenu[i]
-                        }, 100);
-                    })
-                    $(navs[i - 1]).click(function () {
-                        $("#wrap").ps().slide(i);
-                        $("#menu").animate({
-                            backgroundColor: colorsChangeMenu[i]
-                        }, 100);
-                    });
-                })(i);
-            }
-            /*导航栏设置END*/
         })
     </script>
 </head>
 
 <body>
-    <div id="container">
-
-        <!-- 导航栏 -->
-        <nav id="menu">
-            <div id="navs">
-                <ul>
-                    <li><a>红</a></li>
-                    <li><a>橙</a></li>
-                    <li><a>黄</a></li>
-                    <li><a>绿</a></li>
-                    <li><a>蓝</a></li>
-                    <li><a>靛</a></li>
-                    <li><a>紫</a></li>
-                </ul>
+    <!-- 导航栏 -->
+    <nav id="menu">
+        <ul>
+            <li data-menuanchor="homePage"><a href="#homePage"><i class="fa fa-home fa-lg"></i></a></li>
+            <li data-menuanchor="1Page"><a href="#1Page">红</a></li>
+            <li data-menuanchor="2Page"><a href="#2Page">橙</a></li>
+            <li data-menuanchor="3Page"><a href="#3Page">黄</a></li>
+            <li data-menuanchor="4Page"><a href="#4Page">绿</a></li>
+            <li data-menuanchor="5Page"><a href="#5Page">蓝</a></li>
+            <li data-menuanchor="6Page"><a href="#6Page">靛</a></li>
+            <li data-menuanchor="7Page"><a href="#7Page">紫</a></li>
+        </ul>
+    </nav>
+    <!-- 内容 -->
+    <!-- TODO:！！！实现颜色介绍 -->
+    <!-- TODO:文物介绍 -->
+    <section id="main">
+        <div id="fullpage">
+            <div class="section active" id="section0"><img class="img" data-src="./img_/首页_.png" alt="《乾隆帝月令七十二候诗》彩色墨"
+                    title="《乾隆帝月令七十二候诗》彩色墨" />
             </div>
-        </nav>
-
-        <!-- 内容 -->
-        <!-- TODO:！！！实现颜色介绍 -->
-        <!-- TODO:logo重写与文物介绍 -->
-        <!-- TODO:BGM设置 -->
-        <section id="main">
-            <div id="wrap">
-                <div class="item"><img class="img" src="./imgsrc_/首页_.png" alt="《乾隆帝月令七十二候诗》彩色墨"
-                        title="《乾隆帝月令七十二候诗》彩色墨" /></div>
-                <div class="item"><img class="img" src="./imgsrc_/红_.png" alt="雍正款仿钧窑变釉弦纹扁肚瓶" title="雍正款仿钧窑变釉弦纹扁肚瓶" />
-                </div>
-                <div class="item"><img class="img" src="./imgsrc_/橙_.png" alt="金胎珊瑚桃式盒" title="金胎珊瑚桃式盒" /></div>
-                <div class="item"><img class="img" src="./imgsrc_/黄_.png" alt="淡黄釉瓶" title="淡黄釉瓶" /></div>
-                <div class="item"><img class="img" src="./imgsrc_/绿_.png" alt="素三彩海蟾纹三足洗" title="素三彩海蟾纹三足洗" /></div>
-                <div class="item"><img class="img" src="./imgsrc_/蓝_.png" alt="天蓝釉双龙耳瓶" title="天蓝釉双龙耳瓶" /></div>
-                <div class="item"><img class="img" src="./imgsrc_/靛_.png" alt="雍正款蓝色透明玻璃八棱瓶" title="雍正款蓝色透明玻璃八棱瓶" />
-                </div>
-                <div class="item"><img class="img" src="./imgsrc_/紫_.png" alt="雍正款仿钧窑变釉海棠式花盆" title="雍正款仿钧窑变釉海棠式花盆" />
-                </div>
+            <div class="section" id="section1"><img class="img" data-src="./img_/红_.png" alt="雍正款仿钧窑变釉弦纹扁肚瓶"
+                    title="雍正款仿钧窑变釉弦纹扁肚瓶" />
             </div>
-        </section>
-
-        <!-- 脚注 -->
-        <!-- XXX:参考文献及免责声明 -->
-        <footer id="footer">
-            <p>
-                <a href="https://github.com/Rzerofour/ChineseTraditionalColors">项目主页</a>|
-                <a href="mailto:someone@microsoft.com?subject=Hello%20again">联系我们</a><br />
-            </p>
-            <p>Powered by <a href="https://github.com">Github</a>. Designed by Sun Siliang and Jing Weiwei.</p>
-        </footer>
-    </div>
+            <div class="section" id="section2"><img class="img" data-src="./img_/橙_.png" alt="金胎珊瑚桃式盒"
+                    title="金胎珊瑚桃式盒" />
+            </div>
+            <div class="section" id="section3"><img class="img" data-src="./img_/黄_.png" alt="淡黄釉瓶" title="淡黄釉瓶" />
+            </div>
+            <div class="section" id="section4"><img class="img" data-src="./img_/绿_.png" alt="素三彩海蟾纹三足洗"
+                    title="素三彩海蟾纹三足洗" />
+            </div>
+            <div class="section" id="section5"><img class="img" data-src="./img_/蓝_.png" alt="天蓝釉双龙耳瓶"
+                    title="天蓝釉双龙耳瓶" />
+            </div>
+            <div class="section" id="section6"><img class="img" data-src="./img_/靛_.png" alt="雍正款蓝色透明玻璃八棱瓶"
+                    title="雍正款蓝色透明玻璃八棱瓶" />
+            </div>
+            <div class="section" id="section7"><img class="img" data-src="./img_/紫_.png" alt="雍正款仿钧窑变釉海棠式花盆"
+                    title="雍正款仿钧窑变釉海棠式花盆" />
+                <!-- 脚注(与紫色文物合为一页) -->
+                <footer class="section fp-auto-height" id="footer">
+                    <p>
+                        <a href="https://github.com/Rzerofour/ChineseTraditionalColors" target="_blank"><i
+                                class="fa fa-github"></i>项目主页</a>|
+                        <a href="mailto:919107390128@njust.edu.cn?subject=关于中国传统色网站的意见与建议"><i
+                                class="fa fa-envelope-o"></i>联系我们</a><br />
+                    </p>
+                    <p>本网站仅供个人学习网页制作，任意素材若侵犯您的权益请联系我们，我们将在24小时内删除。</p>
+                    <p>Powerd by <a href="https://github.com" target="_blank">Github</a>.Designed by <a
+                            href="https://github.com/Rzerofour" target="_blank">Sun
+                            Siliang</a> and <a href="https://github.com/jingweiwei-os" target="_blank">Jing
+                            Weiwei</a>.</p>
+                </footer>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>
