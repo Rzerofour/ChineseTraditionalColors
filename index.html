@@ -2,6 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+    <!-- TODO:增加首页 -->
     <meta charset="utf-8" />
     <title>中国传统色</title>
     <meta name="keywords" content="中国传统色，中国色，传统颜色，传统色彩，色彩文化" />
@@ -31,20 +32,17 @@
                     var colorsChangeMenu = new Array("rgba(177, 59, 46, 1)", "rgba(177, 59, 46, 1)",
                         "rgba(241, 143, 96, 1)", "rgba(255, 238, 111, 1)", "rgba(93,131,81,1)",
                         "rgba(188,212,231,1)", "rgba(111,148,205,1)", "rgba(138,24,116,1)");
-                    // 导航栏颜色渐变
-                    $("#menu").animate({
-                        backgroundColor: colorsChangeMenu[destination.index]
-                    }, 100)
                     // 清除项目背景颜色
                     $("#menu a[href='#" + origin.index + "Page']").css("background-color", "")
+                    // 增加项目背景颜色（渐变）
+                    $("#menu a[href='#" + destination.index + "Page']").animate({
+                        backgroundColor: colorsChangeMenu[destination.index]
+                    }, 100)
                     //清除画笔图标
                     $(".fa-paint-brush").remove()
                     //增加画笔图标
                     $("<i class='fa fa-paint-brush'></i>").prependTo("#menu a[href='#" + destination
                         .index + "Page']")
-                    //增加项目背景颜色
-                    $("#menu a[href='#" + destination.index + "Page']").css("background-color",
-                        "rgba(128, 128, 128, .5)")
                 }
             })
         })
@@ -63,11 +61,12 @@
             <li data-menuanchor="5Page"><a href="#5Page">蓝</a></li>
             <li data-menuanchor="6Page"><a href="#6Page">靛</a></li>
             <li data-menuanchor="7Page"><a href="#7Page">紫</a></li>
+            <li id="readme"><a href="https://github.com/Rzerofour/ChineseTraditionalColors#readme" target="_blank"><i
+                        class="fa fa-info fa-lg"></a></i></li>
         </ul>
     </nav>
     <!-- 内容 -->
-    <!-- TODO:！！！实现颜色介绍 -->
-    <!-- TODO:文物介绍 -->
+    <!-- TODO:实现颜色介绍,文物介绍(分页效果)  -->
     <section id="main">
         <div id="fullpage">
             <div class="section active" id="section0"><img class="img" data-src="./img_/首页_.png" alt="《乾隆帝月令七十二候诗》彩色墨"
@@ -102,9 +101,9 @@
                     </p>
                     <p>本网站仅供个人学习网页制作，任意素材若侵犯您的权益请联系我们，我们将在24小时内删除。</p>
                     <p>Powerd by <a href="https://github.com" target="_blank">Github</a>.Designed by <a
-                            href="https://github.com/Rzerofour" target="_blank">Sun
-                            Siliang</a> and <a href="https://github.com/jingweiwei-os" target="_blank">Jing
-                            Weiwei</a>.</p>
+                            href="https://github.com/Rzerofour" target="_blank">Sun Siliang</a> and <a
+                            href="https://github.com/jingweiwei-os" target="_blank">Jing Weiwei</a>.
+                    </p>
                 </footer>
             </div>
         </div>

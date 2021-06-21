@@ -21,14 +21,14 @@
   overflow: hidden;
   width: 100%;
   height: 58px;
-  background-color: rgba(177, 59, 46, 1);
+  background-color: rgba(0, 0, 0, 0);
   box-shadow: 0 0 10px gray;
 }
 
 #menu ul {
   overflow: hidden;
-  list-style: none;
   flex-direction: row;
+  list-style: none;
 }
 
 #menu a {
@@ -38,14 +38,20 @@
   padding: 14px 50px;
   text-align: center;
   text-decoration: none;
-  color: whitesmoke;
+  color: black;
   border-radius: 24px;
 }
 
 #menu a:hover {
-  color: white;
   transition-duration: .5s;
+
+  color: white;
   background-color: rgba(128, 128, 128, .5);
+  box-shadow: 0 0 10px gray;
+}
+
+#readme {
+  float: right;
 }
 
 /*导航栏END*/
@@ -55,9 +61,12 @@
   top: 50%;
   left: 50%;
   max-width: 50%;
+
   /* 此处设置图片最大宽度 */
   max-height: 80%;
+
   /* 此处设置图片最大高度 */
+
   transform: translate(-50%, -50%);
 }
 
@@ -89,10 +98,6 @@
 #footer a:hover {
   transition-duration: .5s;
   color: gray;
-}
-
-#footer a:visited {
-  color: black;
 }
 
 /*脚注END*/
