@@ -4,7 +4,7 @@
 <head>
     <!-- TODO:增加首页 -->
     <meta charset="utf-8" />
-    <title>中国传统色</title>
+    <title>中国传统色-寻找文物中的中国色彩</title>
     <meta name="keywords" content="中国传统色，中国色，传统颜色，传统色彩，色彩文化" />
     <meta name="description" content="寻找文物中的中国色彩" />
     <link rel="shortcut icon" href="./img_/favicon.ico" />
@@ -18,6 +18,8 @@
     <!-- Powered by https://github.com/jquery/jquery-color -->
     <script type="text/javascript" src="./js/fullpage.min.js"></script>
     <!-- Powered by https://github.com/alvarotrigo/fullPage.js -->
+    <!-- TODO:颜色值复制实现 -->
+    <!-- TODO:php -->
     <script type="text/javascript">
         // TODO:更多动画
         $(document).ready(function () {
@@ -45,6 +47,27 @@
                         .index + "Page']")
                 }
             })
+            //侧栏动态折叠
+            $("div.colorinfo label").click(function () {
+                var $target = $("div.colorinfo input");
+                if ($target.is($(":checked"))) {
+                    $("div.colorinfo label,input").animate({
+                        transform: 'rotateY(180deg)',
+                        right: '0'
+                    })
+                    $("div.info").animate({
+                        right: '-550px'
+                    })
+                } else {
+                    $("div.colorinfo label,input").animate({
+                        transform: 'rotateY(180deg)',
+                        right: '550px'
+                    })
+                    $("div.info").animate({
+                        right: '0'
+                    })
+                }
+            })
         })
     </script>
 </head>
@@ -66,31 +89,316 @@
         </ul>
     </nav>
     <!-- 内容 -->
-    <!-- TODO:实现颜色介绍,文物介绍(分页效果)  -->
+    <!-- TODO:文字补充  -->
     <section id="main">
         <div id="fullpage">
-            <div class="section active" id="section0"><img class="img" data-src="./img_/首页_.png" alt="《乾隆帝月令七十二候诗》彩色墨"
-                    title="《乾隆帝月令七十二候诗》彩色墨" />
+            <div class="section active" id="section0">
+                <div class="img"><img data-src="./img_/首页_.png" alt="《乾隆帝月令七十二候诗》彩色墨" title="《乾隆帝月令七十二候诗》彩色墨" /></div>
+                <div class="iteminfo">
+                    <h1>欢迎来到中国传统色！</h1>
+                    <ul>
+                        <li>在这里您可以：</li>
+                        <li><i class="fa fa-eye"></i> 欣赏中国传统色彩</li>
+                        <li><i class="fa fa-lightbulb-o"></i> 了解中国文物知识</li>
+                        <li><i class="fa fa-book"></i> 阅读色彩背后的故事</li>
+                        <li><i class="fa fa-pencil"></i> 点击即可使用颜色</li>
+                        <li><i class="fa fa-comments-o"></i> 与我们共同交流学习</li>
+                    </ul>
+                </div>
             </div>
-            <div class="section" id="section1"><img class="img" data-src="./img_/红_.png" alt="雍正款仿钧窑变釉弦纹扁肚瓶"
-                    title="雍正款仿钧窑变釉弦纹扁肚瓶" />
+            <div class="section" id="section1">
+                <div class="img"><img data-src="./img_/红_.png" alt="雍正款仿钧窑变釉弦纹扁肚瓶" title="雍正款仿钧窑变釉弦纹扁肚瓶" /></div>
+                <div class="iteminfo">
+                    <h1>介绍放这</h1>
+                </div>
+                <div class="colorinfo">
+                    <input type="checkbox" id="checkbox">
+                    <label for="checkbox">
+                        <i class="fa fa-chevron-left fa-5x"></i>
+                    </label>
+                    <div class="info">
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(203, 82, 62, 1) ;"></div>
+                            <div class="name"><ruby>赩<rt>xì</rt></ruby>炽</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(177, 59, 46, 1) ;"></div>
+                            <div class="name">石榴裙</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(149, 48, 46, 1) ;"></div>
+                            <div class="name">朱湛</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(177, 59, 46, 1) ;"></div>
+                            <div class="name">大<ruby>繎<rt>rán</rt></ruby></div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="section" id="section2"><img class="img" data-src="./img_/橙_.png" alt="金胎珊瑚桃式盒"
-                    title="金胎珊瑚桃式盒" />
+            <div class="section" id="section2">
+                <div class="img"><img data-src="./img_/橙_.png" alt="金胎珊瑚桃式盒" title="金胎珊瑚桃式盒" /></div>
+                <div class="iteminfo">
+                    <h1>介绍放这</h1>
+                </div>
+                <div class="colorinfo">
+                    <input type="checkbox" id="checkbox">
+                    <label for="checkbox">
+                        <i class="fa fa-chevron-left fa-5x"></i>
+                    </label>
+                    <div class="info">
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(203, 82, 62, 1) ;"></div>
+                            <div class="name"><ruby>赩<rt>xì</rt></ruby>炽</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(177, 59, 46, 1) ;"></div>
+                            <div class="name">石榴裙</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(149, 48, 46, 1) ;"></div>
+                            <div class="name">朱湛</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(177, 59, 46, 1) ;"></div>
+                            <div class="name">大<ruby>繎<rt>rán</rt></ruby></div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="section" id="section3"><img class="img" data-src="./img_/黄_.png" alt="淡黄釉瓶" title="淡黄釉瓶" />
+            <div class="section" id="section3">
+                <div class="img"><img data-src="./img_/黄_.png" alt="淡黄釉瓶" title="淡黄釉瓶" /></div>
+                <div class="iteminfo">
+                    <h1>介绍放这</h1>
+                </div>
+                <div class="colorinfo">
+                    <input type="checkbox" id="checkbox">
+                    <label for="checkbox">
+                        <i class="fa fa-chevron-left fa-5x"></i>
+                    </label>
+                    <div class="info">
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(203, 82, 62, 1) ;"></div>
+                            <div class="name"><ruby>赩<rt>xì</rt></ruby>炽</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(177, 59, 46, 1) ;"></div>
+                            <div class="name">石榴裙</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(149, 48, 46, 1) ;"></div>
+                            <div class="name">朱湛</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(177, 59, 46, 1) ;"></div>
+                            <div class="name">大<ruby>繎<rt>rán</rt></ruby></div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="section" id="section4"><img class="img" data-src="./img_/绿_.png" alt="素三彩海蟾纹三足洗"
-                    title="素三彩海蟾纹三足洗" />
+            <div class="section" id="section4">
+                <div class="img"><img data-src="./img_/绿_.png" alt="素三彩海蟾纹三足洗" title="素三彩海蟾纹三足洗" /></div>
+                <div class="iteminfo">
+                    <h1>介绍放这</h1>
+                </div>
+                <div class="colorinfo">
+                    <input type="checkbox" id="checkbox">
+                    <label for="checkbox">
+                        <i class="fa fa-chevron-left fa-5x"></i>
+                    </label>
+                    <div class="info">
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(203, 82, 62, 1) ;"></div>
+                            <div class="name"><ruby>赩<rt>xì</rt></ruby>炽</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(177, 59, 46, 1) ;"></div>
+                            <div class="name">石榴裙</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(149, 48, 46, 1) ;"></div>
+                            <div class="name">朱湛</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(177, 59, 46, 1) ;"></div>
+                            <div class="name">大<ruby>繎<rt>rán</rt></ruby></div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="section" id="section5"><img class="img" data-src="./img_/蓝_.png" alt="天蓝釉双龙耳瓶"
-                    title="天蓝釉双龙耳瓶" />
+            <div class="section" id="section5">
+                <div class="img"><img data-src="./img_/蓝_.png" alt="天蓝釉双龙耳瓶" title="天蓝釉双龙耳瓶" /></div>
+                <div class="iteminfo">
+                    <h1>介绍放这</h1>
+                </div>
+                <div class="colorinfo">
+                    <input type="checkbox" id="checkbox">
+                    <label for="checkbox">
+                        <i class="fa fa-chevron-left fa-5x"></i>
+                    </label>
+                    <div class="info">
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(203, 82, 62, 1) ;"></div>
+                            <div class="name"><ruby>赩<rt>xì</rt></ruby>炽</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(177, 59, 46, 1) ;"></div>
+                            <div class="name">石榴裙</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(149, 48, 46, 1) ;"></div>
+                            <div class="name">朱湛</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(177, 59, 46, 1) ;"></div>
+                            <div class="name">大<ruby>繎<rt>rán</rt></ruby></div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="section" id="section6"><img class="img" data-src="./img_/靛_.png" alt="雍正款蓝色透明玻璃八棱瓶"
-                    title="雍正款蓝色透明玻璃八棱瓶" />
+            <div class="section" id="section6">
+                <div class="img"><img data-src="./img_/靛_.png" alt="雍正款蓝色透明玻璃八棱瓶" title="雍正款蓝色透明玻璃八棱瓶" /></div>
+                <div class="iteminfo">
+                    <h1>介绍放这</h1>
+                </div>
+                <div class="colorinfo">
+                    <input type="checkbox" id="checkbox">
+                    <label for="checkbox">
+                        <i class="fa fa-chevron-left fa-5x"></i>
+                    </label>
+                    <div class="info">
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(203, 82, 62, 1) ;"></div>
+                            <div class="name"><ruby>赩<rt>xì</rt></ruby>炽</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(177, 59, 46, 1) ;"></div>
+                            <div class="name">石榴裙</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(149, 48, 46, 1) ;"></div>
+                            <div class="name">朱湛</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(177, 59, 46, 1) ;"></div>
+                            <div class="name">大<ruby>繎<rt>rán</rt></ruby></div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="section" id="section7"><img class="img" data-src="./img_/紫_.png" alt="雍正款仿钧窑变釉海棠式花盆"
-                    title="雍正款仿钧窑变釉海棠式花盆" />
+            <div class="section" id="section7">
+                <div class="img"><img data-src="./img_/紫_.png" alt="雍正款仿钧窑变釉海棠式花盆" title="雍正款仿钧窑变釉海棠式花盆" /></div>
+                <div class="iteminfo">
+                    <h1>介绍放这</h1>
+                </div>
+                <div class="colorinfo">
+                    <input type="checkbox" id="checkbox">
+                    <label for="checkbox">
+                        <i class="fa fa-chevron-left fa-5x"></i>
+                    </label>
+                    <div class="info">
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(203, 82, 62, 1) ;"></div>
+                            <div class="name"><ruby>赩<rt>xì</rt></ruby>炽</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(177, 59, 46, 1) ;"></div>
+                            <div class="name">石榴裙</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(149, 48, 46, 1) ;"></div>
+                            <div class="name">朱湛</div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="cube" style="background-color:rgba(177, 59, 46, 1) ;"></div>
+                            <div class="name">大<ruby>繎<rt>rán</rt></ruby></div>
+                            <div class="intro">
+                                赤红如火，光亮艳炽。左思《蜀都赋》曰”丹沙赩炽出其坂，蜜房郁毓被其阜”。李周翰注“赩炽，赤光，丹砂色也”。陶拱《五色比象赋》曰“青为山兮峣嶷而争峻，赤为火兮赩炽而含燠”。朱景英《龚蕙亩宣副帅招同任伯卿将军登赤嵌城望海作》咏“厥状赩炽出绀鬘,屹然百雉凌飞湍”。
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- 脚注(与紫色文物合为一页) -->
                 <footer class="section fp-auto-height" id="footer">
                     <p>

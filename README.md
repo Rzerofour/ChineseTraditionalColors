@@ -1,4 +1,4 @@
-# ChineseTraditionalColors|中国传统色|寻找文物中的中国色彩
+# ChineseTraditionalColors|中国传统色-寻找文物中的中国色彩
 
 ---
 
