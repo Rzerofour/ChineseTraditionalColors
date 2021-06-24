@@ -33,4 +33,5 @@
  - JQuery:https://github.com/jquery/jquery
  - JQuery Color:https://github.com/jquery/jquery-color
  - fullPage:https://github.com/alvarotrigo/fullPage.js
- - Font Awesome:http://www.fontawesome.com.cn/
+ - clipboard:https://github.com/zenorocha/clipboard.js
+ - Font Awesome:https://github.com/FortAwesome/Font-Awesome
