@@ -8,7 +8,7 @@
     url('../fonts/NewShanHaiShu.woff') format('woff'),
     url('../fonts/NewShanHaiShu.ttf') format('truetype'),
     url('../fonts/NewShanHaiShu.svg') format('svg');
-    /* Powered by https://github.com/aui/font-spider */
+  /* Powered by https://github.com/aui/font-spider */
 }
 
 /*主体START*/
@@ -18,7 +18,7 @@
 }
 
 body {
-  background-image: url('../img_/logobackground.png');
+  background-image: url('./img_/logobackground.png');
 }
 
 /*主体END*/
@@ -60,9 +60,11 @@ body {
 #rm {
   float: right;
 }
+
 #moon {
   float: right;
 }
+
 /*导航栏END*/
 /* 留言板START */
 #msg {
