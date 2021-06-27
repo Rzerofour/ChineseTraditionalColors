@@ -91,7 +91,7 @@
             })
             //深色模式
             var moon = false;
-            $("#moon").click(function () {
+            $("body").delegate("#moon","click",function(){
                 if (moon) {
                     $("div").not("#message").css("color", "black");
                     $("#menu").find("*").css("color", "black");
@@ -106,7 +106,7 @@
                     $("div").not("#message").css("color", "white");
                     $("#menu").find("*").css("color", "white");
                     $("#footer").find("p").css("color", "black");
-                    $("body").css("background-image", "url('../img_/logomoon.jpg')");
+                    $("body").css("background-image", "url('../img_/moon.jpg')");
                     $(".info").css("background-color", "rgba(41,40,45,1)");
                     $(".info").find("*").not(".cube").css("background-color", "rgba(45,46,54,1)");
                     $("#menu").css("background-color", "rgba(45,46,54,1)");
