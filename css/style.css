@@ -1,10 +1,16 @@
-/*TODO:字体文件支持（font-spider），等待网页制作完成*/
-/* @font-face {
+@font-face {
   font-family: 'NewShanHaiShu';
   font-weight: normal;
   font-style: normal;
-  src: url('./fonts/NewShanHaiShu.ttf') format('truetype');
-} */
+  src: url('../fonts/NewShanHaiShu.ttf');
+  src: url('../fonts/NewShanHaiShu.eot?#font-spider') format('embedded-opentype'),
+    url('../fonts/NewShanHaiShu.woff2') format('woff2'),
+    url('../fonts/NewShanHaiShu.woff') format('woff'),
+    url('../fonts/NewShanHaiShu.ttf') format('truetype'),
+    url('../fonts/NewShanHaiShu.svg') format('svg');
+    /* Powered by https://github.com/aui/font-spider */
+}
+
 /*主体START*/
 * {
   margin: 0;
@@ -18,6 +24,8 @@ body {
 /*主体END*/
 /*导航栏START*/
 #menu {
+  font-family: 'NewShanHaiShu';
+  font-size: 1.7em;
   position: fixed;
   z-index: 3;
   top: 0;
@@ -33,7 +41,6 @@ body {
 }
 
 #menu a {
-  font-size: 20px;
   display: block;
   float: left;
   padding: 14px 50px;
@@ -50,20 +57,81 @@ body {
   box-shadow: 0 0 10px gray;
 }
 
-#readme {
+#rm {
+  float: right;
+}
+#moon {
+  float: right;
+}
+/*导航栏END*/
+/* 留言板START */
+#msg {
   float: right;
 }
 
-/*导航栏END*/
+#mask {
+  position: fixed !important;
+  z-index: 98;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  background: rgba(128, 128, 128, .5);
+}
+
+#message {
+  visibility: hidden;
+}
+
+#message form {
+  position: absolute;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 500px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+  border-radius: 24px;
+  background: whitesmoke;
+  box-shadow: 0 0 10px gray;
+}
+
+#message h1 {
+  order: 1;
+}
+
+#message textarea {
+  order: 2;
+  width: 400px;
+  height: 300px;
+  resize: none;
+  border-radius: 24px;
+}
+
+#message input {
+  order: 3;
+  width: 200px;
+  height: 50px;
+}
+
+/* 留言板END */
 /*内容START*/
+#main {
+  font-family: 'NewShanHaiShu';
+  font-size: 1.5em;
+}
+
 .img {
   position: absolute;
   top: 50%;
   left: 50%;
   max-width: 50%;
-  /* 此处设置图片最大宽度 */
   max-height: 80%;
-  /* 此处设置图片最大高度 */
   transform: translate(-50%, -50%);
 }
 
@@ -73,17 +141,19 @@ body {
   max-width: 20%;
   margin: 0 100px 0 0;
 }
-.iteminfo h2{
-    font-size: 2em;
-    font-weight: bolder;
+
+.iteminfo h2 {
+  font-size: 2em;
+  font-weight: bolder;
 }
+
 .iteminfo h1 {
   font-size: 2.5em;
   font-weight: bolder;
 }
 
 .iteminfo p {
-  font-size: larger;
+  font-size: 1.2em;
 }
 
 .iteminfo ul {
@@ -91,28 +161,33 @@ body {
 }
 
 .iteminfo li {
-  font-size: larger;
+  font-size: 1.2em;
   margin: 10px;
 }
 
-.colorinfo label,
-input {
+.colorinfo label {
   position: absolute;
   z-index: 2;
   top: 50%;
   right: 0;
 }
-.colorinfo label:hover{
-  color:rgba(0, 0, 0, 0.5);
+
+.colorinfo label:hover {
+  color: rgba(127, 127, 127, .5);
+  transition-duration: 0.2s;
 }
 
 .colorinfo input {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: 0;
   display: none;
 }
 
 .colorinfo .info {
-  z-index: 2;
   position: absolute;
+  z-index: 2;
   top: 58px;
   right: -550px;
   display: flex;
@@ -135,9 +210,9 @@ input {
   justify-content: space-around;
   width: 250px;
   height: 440px;
+  border-radius: 24px;
   background-color: whitesmoke;
-    box-shadow: 0 0 10px gray;
-      border-radius: 24px;
+  box-shadow: 0 0 10px gray;
 }
 
 .colorinfo .info .box .cube {
@@ -145,8 +220,9 @@ input {
   width: 75px;
   height: 75px;
 }
-.colorinfo .info .box .cube:hover{
-      box-shadow: 0 0 10px gray;
+
+.colorinfo .info .box .cube:hover {
+  box-shadow: 0 0 10px gray;
 }
 
 .colorinfo .info .box .name {
@@ -156,18 +232,20 @@ input {
 
 .colorinfo .info .box .intro {
   overflow-y: auto;
+
   /* 文本溢出出现滚动条 */
   order: 3;
   width: 230px;
   height: 308px;
   word-wrap: break-word;
-    /* 文本自动换行 */
+
+  /* 文本自动换行 */
 }
 
 /*内容END*/
 /*脚注START*/
 #footer {
-  font-size: smaller;
+  font-size: .8em;
   position: absolute;
   z-index: 1;
   bottom: 0;
@@ -183,7 +261,7 @@ input {
 }
 
 #footer a {
-  font-size: medium;
+  font-size: 1.2em;
   font-weight: 900;
   text-decoration: none;
   color: black;
